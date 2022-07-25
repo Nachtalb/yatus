@@ -28,3 +28,20 @@ button {
     width: 40px;
     margin-right: 1em;
 }
+
+.rain {
+  position: fixed;
+  animation-duration: 5s;
+  animation-name: slidedown;
+  animation-fill-mode: forwards;
+  height: 40px;
+  top: -40px;
+  color: #000000;
+}
+
+@keyframes slidedown {
+  to {
+    top: 120%;
+    color: #ffffff;
+  }
+}

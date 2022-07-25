@@ -54,16 +54,32 @@ export default function Dashboard({}) {
   function formSubmit(event) {
     event.preventDefault()
     const data = new FormData(event.target)
+    let hasErrors = false
     inputs.map((object) => {
       object.errorState[1]("")
       const value = data.get(object.name)
       if (value === "") {
         object.errorState[1]("The passcode cannot be empty")
+        hasErrors = true
       } else if (data.get(object.name) !== object.password) {
         object.errorState[1]("The passcode is wrong")
+        hasErrors = true
       }
     })
+    if (!hasErrors) {
+      makeItRain()
+    }
+  }
 
+
+  function makeItRain() {
+    const body = document.getElementsByTagName("body")[0]
+    const img = document.createElement("img")
+    img.className = "rain"
+    img.src = "public/watermelon.svg"
+    img.style.left = Math.floor(Math.random() * 100) + 'vw';
+    body.appendChild(img)
+    setTimeout(makeItRain, 50)
   }
 
   return (
