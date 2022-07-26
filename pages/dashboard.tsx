@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React from "react";
 import styles from "../styles/Home.module.css";
-import dashboardStyles from "../styles/Dashboard.module.css";
 
 function Input({ name, label, errorState, icon }) {
   const [error, _] = errorState;
@@ -25,28 +24,28 @@ export default function Dashboard({}) {
     name: "passcode1",
     label: "Passcode 1",
     password: "420",
-    icon: "public/search.svg",
+    icon: "/search.svg",
     errorState: React.useState("")
   },
   {
     name: "passcode2",
     label: "Passcode 2",
     password: "101835",
-    icon: "public/code.svg",
+    icon: "/code.svg",
     errorState: React.useState("")
   },
   {
     name: "passcode3",
     label: "Passcode 3",
     password: "hund",
-    icon: "public/map-pin.svg",
+    icon: "/map-pin.svg",
     errorState: React.useState("")
   },
   {
     name: "passcode4",
     label: "Passcode 4",
     password: "watermelon",
-    icon: "public/feather.svg",
+    icon: "/feather.svg",
     errorState: React.useState("")
   },
   ]
@@ -78,7 +77,7 @@ export default function Dashboard({}) {
     const body = document.getElementsByTagName("body")[0]
     const img = document.createElement("img")
     img.className = "rain"
-    img.src = "public/watermelon.svg"
+    img.src = "/watermelon.svg"
     img.style.left = Math.floor(Math.random() * 100) + 'vw';
     img.style.height = 40 + Math.floor(Math.random() * 30) + 'px';
     body.appendChild(img)
@@ -86,7 +85,7 @@ export default function Dashboard({}) {
   }
 
   return (
-    <div className={dashboardStyles.container}>
+    <div>
       <Head>
         <title>Dashboard - Tactical Watermelon Deployment System</title>
         <link rel="icon" href="/favicon.ico" />
@@ -94,7 +93,7 @@ export default function Dashboard({}) {
 
       <header>
         <h1 className={styles.title}>
-          <img src="public/watermelon.svg" alt="Tactical Watermelon"/>
+          <img src="/watermelon.svg" alt="Tactical Watermelon"/>
           Tactical Watermelon Deployment System
         </h1>
         <p className={styles.description}>
@@ -109,7 +108,7 @@ export default function Dashboard({}) {
           })}
 
           <div className="input">
-            <button type="submit">Deploy</button>
+            <button className="btn" type="submit">Deploy</button>
           </div>
         </form>
       </main>

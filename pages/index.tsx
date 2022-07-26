@@ -41,7 +41,7 @@ export default function Home({}) {
 
       <header>
         <h1 className={styles.title}>
-          <img src="public/watermelon.svg" alt="Tactical Watermelon"/>
+          <img src="/watermelon.svg" alt="Tactical Watermelon"/>
           Tactical Watermelon Deployment System
         </h1>
         <p className={styles.description}>
@@ -57,7 +57,7 @@ export default function Home({}) {
             <p><a onClick={toggleHint} href="#">Forgot Password?</a></p>
           }
           { showHint &&
-            <audio src="public/morse.mp3" controls></audio>
+            <audio src="/morse.mp3" controls></audio>
           }
         </form>
       </main>
