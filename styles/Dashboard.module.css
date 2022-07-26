@@ -31,17 +31,23 @@ button {
 
 .rain {
   position: fixed;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-name: slidedown;
   animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
   height: 40px;
-  top: -40px;
-  color: #000000;
+  top: -70px;
 }
 
 @keyframes slidedown {
-  to {
+  from {
+    animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333);
+
+  }
+  99.99999% {
     top: 120%;
-    color: #ffffff;
+  }
+  to {
+    top: -70px;
   }
 }

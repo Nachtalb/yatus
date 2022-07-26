@@ -72,14 +72,17 @@ export default function Dashboard({}) {
   }
 
 
-  function makeItRain() {
+  function makeItRain(iteration?: number ) {
+    iteration = iteration || 0
+    if (iteration == 40) return
     const body = document.getElementsByTagName("body")[0]
     const img = document.createElement("img")
     img.className = "rain"
     img.src = "public/watermelon.svg"
     img.style.left = Math.floor(Math.random() * 100) + 'vw';
+    img.style.height = 40 + Math.floor(Math.random() * 30) + 'px';
     body.appendChild(img)
-    setTimeout(makeItRain, 50)
+    setTimeout(() => makeItRain(iteration + 1), 50)
   }
 
   return (
