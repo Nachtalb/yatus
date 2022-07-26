@@ -11,8 +11,8 @@
     "@types/node": "^18",
     "@types/react": "^18.0.15",
     "bun-framework-next": "^12",
-    "typescript": "latest",
-    "react-refresh": "0.10.0"
+    "react-refresh": "0.10.0",
+    "typescript": "latest"
   },
   "module": "index.js"
 }
