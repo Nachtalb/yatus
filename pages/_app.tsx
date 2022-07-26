@@ -4,7 +4,11 @@ import "../styles/Dashboard.css";
 function MyApp({ Component, pageProps }) {
   function keyHandler(event: KeyboardEvent) {
     // Prevent F keys, ctrl and alt combinations
-    if ((event.keyCode >= 112 && event.keyCode <= 136) || event.ctrlKey || event.altKey) {
+    if (
+      (event.keyCode >= 112 && event.keyCode <= 136)
+      || event.ctrlKey
+      || event.altKey
+      || event.key === "Meta") {
       event.preventDefault()
     }
   }
