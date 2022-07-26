@@ -85,7 +85,7 @@ export default function Dashboard({}) {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Head>
         <title>Dashboard - Tactical Watermelon Deployment System</title>
         <link rel="icon" href="/favicon.ico" />
