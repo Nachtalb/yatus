@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  color: white;
+}
+
 .error {
   color: rgb(229 73 55);
 }
