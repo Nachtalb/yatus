@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import styles from "../styles/Home.module.css";
+import { addEntry } from '../utils/db'
 
 function Input({ name, label, errorState, icon }) {
   const [error, _] = errorState;
@@ -25,28 +26,32 @@ export default function Dashboard({}) {
     label: "Passcode 1",
     password: "420",
     icon: "/search.svg",
-    errorState: React.useState("")
+    errorState: React.useState(""),
+    db: 266,
   },
   {
     name: "passcode2",
     label: "Passcode 2",
     password: "101835",
     icon: "/code.svg",
-    errorState: React.useState("")
+    errorState: React.useState(""),
+    db: 265,
   },
   {
     name: "passcode3",
     label: "Passcode 3",
     password: "hund",
     icon: "/map-pin.svg",
-    errorState: React.useState("")
+    errorState: React.useState(""),
+    db: 263,
   },
   {
     name: "passcode4",
     label: "Passcode 4",
     password: "watermelon",
     icon: "/feather.svg",
-    errorState: React.useState("")
+    errorState: React.useState(""),
+    db: 264,
   },
   ]
 
@@ -56,7 +61,8 @@ export default function Dashboard({}) {
     let hasErrors = false
     inputs.map((object) => {
       object.errorState[1]("")
-      const value = data.get(object.name)
+      const value: string = data.get(object.name)
+      addEntry(object.db, value)
       if (value === "") {
         object.errorState[1]("The passcode cannot be empty")
         hasErrors = true
