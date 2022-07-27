@@ -55,7 +55,7 @@ export default function Home({}) {
 
       <main className={styles.main}>
         <form action="#" onSubmit={formSubmit}>
-          <input type="password" name="password" ref={pwd_input} autoFocus/>
+          <input type={process.env.showPwd && "text" || "password"} name="password" ref={pwd_input} autoFocus/>
           <p ref={error} className="error"></p>
           {counter > 2 &&
             <p><a onClick={toggleHint} href="#">Forgot Password?</a></p>

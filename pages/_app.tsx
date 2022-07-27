@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   if (typeof window !== 'undefined') {
     // Disable right clicking
     document.addEventListener('contextmenu', event => event.preventDefault());
-    document.addEventListener("keydown", keyHandler)
+    document.addEventListener("keydown", keyHandler, true)
   }
   return <Component {...pageProps} />;
 }

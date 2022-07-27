@@ -5,12 +5,13 @@ import { addEntry } from '../utils/db'
 
 function Input({ name, label, errorState, icon }) {
   const [error, _] = errorState;
+
   return (
   <div className="input">
     <img className="icon" src={icon} alt={label} />
     <label htmlFor={name}>
       <span>{label}</span>
-      <input type="password" name={name} id={name} />
+      <input type={process.env.showPwd && "text" || "password"} name={name} id={name} />
       {error !== "" &&
         <p className="error">{error}</p>
       }

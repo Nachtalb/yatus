@@ -7,4 +7,7 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  env: {
+    showPwd: false,
+  }
 };
