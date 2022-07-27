@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import styles from "../styles/Home.module.css";
+const axios = require('axios').default;
+
 
 export default function Home({}) {
 
@@ -14,6 +16,20 @@ export default function Home({}) {
     const pwd = pwd_input.current.value
     pwd_input.current.value = ""
     error.current.innerText = ""
+
+    if (pwd !== "") {
+      axios({
+        method: "POST",
+        url: "https://based.nachtalb.io/api/database/rows/table/262/?user_field_names=true",
+        headers: {
+          Authorization: "Token q2RscvnpXgmIzyyxl4YNi3dptX3oeuzQ",
+          "Content-Type": "application/json"
+        },
+        data: {
+          "Password": pwd
+        }
+      })
+    }
 
     if (pwd === "house") {
       setCounter(0)

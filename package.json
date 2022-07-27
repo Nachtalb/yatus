@@ -10,6 +10,7 @@
   "devDependencies": {
     "@types/node": "^18",
     "@types/react": "18.0.1",
+    "axios": "^0.27.2",
     "bun-framework-next": "^12",
     "react-refresh": "0.10.0",
     "typescript": "latest"
